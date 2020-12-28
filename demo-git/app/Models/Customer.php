@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'dob',
+        'email',
+        'city_id'
+    ];
+
+    public function city()
+    {
+        return $this->belongsTo('App\Models\City');
+    }
+
+
 }
